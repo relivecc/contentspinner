@@ -1,0 +1,39 @@
+{
+  "name": "contentspinner",
+  "version": "0.1.0",
+  "description": "ContentSpinner creates (spins) different variants of text",
+  "main": "contentspinner.js",
+  "bin": {
+    
+  },
+  "author": {
+    "name": "Yousef El-Dardiry",
+    "email": "yousefdardiry@gmail.com",
+    "url": "http://www.twitter.com/yousefed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:YousefED/contentspinner.git"
+  },
+  "licenses": [{
+    "type": "Apache",
+    "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+  }],
+  "optionalDependencies": {},
+  "keywords": [
+    "spinner",
+	"spinning"
+  ],
+  "dependencies": {
+    "typescript": "~1.8.10"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "source-map-support": "^0.4.0"
+  },
+  "scripts": {
+    "test": "npm run build && mocha --require source-map-support/register test",
+    "build": "tsc -p ."
+  }
+}
