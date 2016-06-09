@@ -25,12 +25,12 @@
 	"spinning"
   ],
   "dependencies": {
-    "typescript": "~1.8.10"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.4.5",
-    "source-map-support": "^0.4.0"
+    "source-map-support": "^0.4.0",
+    "typescript": "~1.8.10"
   },
   "scripts": {
     "test": "npm run build && mocha --require source-map-support/register test",
