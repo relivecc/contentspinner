@@ -25,9 +25,7 @@
     "compileOnSave": true,
     "buildOnSave": false,
     "files": [
-		"contentspinner.ts",
-        "typings/mocha/mocha.d.ts",
-        "typings/chai/chai.d.ts",
+		"src/contentspinner.ts",
 		"test/test.ts"
     ]
 }
