@@ -1,5 +1,5 @@
 
-function spin_internal(input:string, inside:boolean) {
+function spin_internal(input:string, inside:boolean): string {
     let parts = [];
     
     let openingPos = input.indexOf("{");
@@ -77,7 +77,7 @@ export function spincontent(text:string) {
 				return spinText(res, false);
 			}
 		}
-	}
-    */
+    }
     return "test";
+    */
 }
