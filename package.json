@@ -2,7 +2,8 @@
   "name": "contentspinner",
   "version": "0.1.1",
   "description": "ContentSpinner creates (spins) different variants of text",
-  "main": "contentspinner.js",
+  "main": "build/contentspinner.js",
+  "types": "contentspinner.ts",
   "bin": {
     
   },
@@ -34,6 +35,8 @@
   },
   "scripts": {
     "test": "npm run build && mocha --require source-map-support/register test",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "prebuild": "rm -rf build",
+    "postinstall": "yarn build"
   }
 }

@@ -1,23 +1,22 @@
-
-function spin_internal(input:string, inside:boolean): string {
+function spin_internal(input: string, inside: boolean): string {
     let parts = [];
-    
+
     let openingPos = input.indexOf("{");
     let endPos = input.indexOf("}");
-    
-    if(openingPos == -1 && endPos == -1) {
-        if(inside) {
+
+    if (openingPos === -1 && endPos === -1) {
+        if (inside) {
             // no more { }, but inside brackets. Take a random element seperated by |
-            const options = input.split('|');
+            const options = input.split("|");
             return options[Math.floor(Math.random() * options.length)];
         } else {
             // no more { }, and not inside brackets. Just a string, return it.
             return input;
         }
     } else {
-        if(openingPos == -1 || endPos == -1) {
+        if (openingPos === -1 || endPos === -1) {
             throw new Error("uneven brackets");
-        } else if(endPos < openingPos) {
+        } else if (endPos < openingPos) {
             throw new Error("end bracket before opening bracket");
         } else {
             // Grab matching opening bracket for the first closing bracket (endPos)
@@ -27,19 +26,20 @@ function spin_internal(input:string, inside:boolean): string {
 
             // "Spin" the deepest level brackets
             parts.push(input.substring(0, openingPos));
-            parts.push(spin_internal(input.substring(openingPos+1, endPos),true));
-            parts.push(input.substring(endPos+1));
-            
+            parts.push(
+                spin_internal(input.substring(openingPos + 1, endPos), true)
+            );
+            parts.push(input.substring(endPos + 1));
+
             // deepest level now spinned, spin the rest
-            return spin_internal(parts.join(''), false);
+            return spin_internal(parts.join(""), false);
         }
     }
-
 }
 
-export function spincontent(text:string) {
+export function spincontent(text: string) {
     return spin_internal(text, false);
-    
+
     /*
     private static String spinText(String input, boolean inside) throws Exception {
 		StringBuilder sb = new StringBuilder();
