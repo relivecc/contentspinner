@@ -1,5 +1,5 @@
 import {assert} from "chai";
-import {spincontent} from "../contentspinner";
+import {spincontent} from "../src/contentspinner";
 
 describe("contentspinner", function () {
      it('should work for no brackets', function () {
